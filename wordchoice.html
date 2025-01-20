@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">  
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>  
+</head>
+
+<body class ="page1">
+    <ul>
+        <li><a href="index.html">Back</a></li>
+    <li style="float:left"><a>Word Choices</a></li>
+  </ul>
+
+<br>
+<br>
+<br>
+<br>
+
+  <div class="grid-container">
+    <div class="grid-item"><a href="word1.html" class="button" onclick="setTypewriterFlag(event)">Chrysalism</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item"><a href="word2.html" class="button" onclick="setTypewriterFlag(event)">Duende</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item"><a href="word3.html" class="button" onclick="setTypewriterFlag(event)">L'appel du Vide</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item"><a href="word4.html" class="button" onclick="setTypewriterFlag(event)">Occhialism</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item center-item">Have you ever felt an emotion that you just couldn't put into words? We've all felt that frustration before. Start to gain some clarity by clicking on the surrounding word options! Make sure you hit the scroll button on each page to learn about each word!</div>
+
+    <div class="grid-item"><a href="word5.html" class="button" onclick="setTypewriterFlag(event)">Opia</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item"><a href="word6.html" class="button" onclick="setTypewriterFlag(event)">Ruinenlust</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item"><a href="word7.html" class="button" onclick="setTypewriterFlag(event)">Sonder</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+    <div class="grid-item"><a href="word8.html" class="button" onclick="setTypewriterFlag(event)">Weltschmertz</a></div>
+    <script>
+    function setTypewriterFlag(event) {
+      localStorage.setItem('startTypewriter', 'true');
+    }
+    </script>
+
+</div>
+
+</body>
+</html>

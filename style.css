@@ -1,0 +1,452 @@
+body {
+  min-height: 100vh;
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif, italic;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+li {
+  float: right;
+}
+
+li p {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+li  a:hover {
+    color: grey;
+  }
+
+h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.p1 {
+  font-size: 1.4rem;
+  color: white;
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.p2 {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.p3 {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  width: 85%;
+  max-width: 850px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.p4 {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  width: 95%;
+  max-width: 950px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.bottom {
+  padding: 20px;
+}
+
+
+figcaption {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: white;
+  font-style: italic;
+}
+
+ body.page1 {
+  background-image: url('bookback.jpg')
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 15px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #C0E1E4;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+.scroll-button:hover {
+  background-color: #8EA6A9;
+}
+
+
+body.page2 {
+  background-image: url('rainback.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+body.page3 {
+  background-image: url('artback.jpg')
+}
+
+body.page4 {
+  background-image: url('caveback.jpg')
+}
+
+body.page5 {
+  background-image: url('spaceback.jpg')
+}
+
+body.page6 {
+  background-image: url('eyeback.jpg')
+}
+
+body.page7 {
+  background-image: url('ruinsback.jpg')
+}
+
+body.page8 {
+  background-image: url('crowdback.jpg')
+}
+
+body.page9 {
+  background-image: url('warback.jpg')
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 60%;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  border-radius: 0 3px 3px 0;
+  background: rgba(0, 0, 0, 0.5);
+  user-select: none;
+  z-index: 2;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* video */
+.centered-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full viewport height */
+  width: 100%;
+  background-color: #000; /* Optional: black background for a theater effect */
+}
+
+.centered-video {
+  max-width: 90%;
+  max-height: 90%;
+  aspect-ratio: 16 / 9;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.flex-container {
+  display: flex;
+  background-color: black;
+}
+
+.flex-container > div {
+  background-color: #white;
+  color: white;
+  width: 50%;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Space between grid items */
+  /*width: 300px; /* Adjust width as needed */
+  /*margin: 0 auto; /* Center the grid horizontally */
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.center-item {
+   /* Highlight center item */
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  grid-column: span 1.5;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: black;
+  color: #C0E1E4;
+  /*border: none; */
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8EA6A9;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/*Button */
+button:hover {
+    color: grey;
+
+
+/*Navigation */
+
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: black;
+  position: fixed;
+  height: 90vh;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.maincontent {
+  margin-left: 300px;
+  padding: 1px 16px;
+  height: ;
+  width: ;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.maincontent {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+  }

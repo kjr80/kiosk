@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">  
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>  
+</head>
+
+<body class="page4">
+    <ul>
+        <li><a href="wordchoice.html">Back</a></li>
+    <li style="float:left"><a>L'appel du Vide</a></li>
+  </ul>
+
+  <div class="section top" id="top-section">
+    <br>
+   
+   
+    <br>
+  <h1 id="demo"></h1>
+
+  <script>
+  var i = 0;
+  var txt = `L'appel du Vide`;
+  var speed = 200;
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  if (localStorage.getItem('startTypewriter') === 'true') {
+    localStorage.removeItem('startTypewriter');
+    typeWriter();
+  }
+
+  </script>
+  <p class="p2">the call of the void, the tendency we have to entertain self-destructive thoughts</p>
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+      <img src="bad1.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="bad2.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="bad3.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+</div>
+  
+<script>
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+  }
+  
+  </script>
+
+<div class="section bottom" id="bottom-section">
+  <br>
+  <p class="p1">You are hiking along a steep mountain path, and you find that you’ve come upon the edge of a cliff. For a split second, you think to yourself, what if I took just one extra step? Would it send me right over the edge of the cliff? You glance down at the dark, roaring waters below. What if you jumped? The whistle of a train off in the distance startles you. But then you can’t help but think … where are the train tracks? What if you stood on them, as the train approached, 700 tons of steel and metal speeding toward you … what would happen … how would it feel? You imagine driving over the train tracks instead. You hear the train’s whistle blaring, warning you to stop, but part of you wants to see if you can outrun it. You don’t really want to perish, but something inside you makes you think dangerously.</p>
+</div>
+
+<button class="scroll-button" onclick="smoothScroll()">&#8595;</button>
+
+  <script>
+    let scrollToBottom = true;
+
+    function smoothScroll() {
+      const topSection = document.getElementById("top-section");
+      const bottomSection = document.getElementById("bottom-section");
+
+      if (scrollToBottom) {
+        bottomSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        topSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      scrollToBottom = !scrollToBottom; // Toggle scroll direction
+    }
+  </script>
+
+</body>
+</html>

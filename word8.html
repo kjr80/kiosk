@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">  
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>  
+</head>
+
+<body class="page9">
+    <ul>
+        <li><a href="wordchoice.html">Back</a></li>
+    <li style="float:left"><a>Weltschmertz</a></li>
+  </ul>
+
+  <div class="section top" id="top-section">
+    <br>
+    <br>
+  <h1 id="demo"></h1>
+
+  <script>
+  var i = 0;
+  var txt = 'Weltschmertz';
+  var speed = 200;
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  if (localStorage.getItem('startTypewriter') === 'true') {
+    localStorage.removeItem('startTypewriter');
+    typeWriter();
+  }
+
+  </script>
+  <p class="p4">mental depression or apathy caused by comparison of the actual state of the world with an ideal state</p>
+
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+      <img src="badworld1.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="badworld2.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="badworld3.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="badworld4.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="badworld5.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+</div>
+  
+<script>
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+  }
+  
+  </script>
+
+<div class="section bottom" id="bottom-section">
+  <br>
+  <p class="p1">It’s late in the evening and you turn on your television to catch up with the day’s latest current events. The news plays the same depressing headlines on repeat. You flip through the channels only to find more of the same. You search for good news but can’t seem to find any. All you see and hear is war, politics, death and destruction. Economic hardships, murder, and a horde of other crimes are reported everywhere you look. It’s all just too much. You shut off the television, exhausted. You are becoming numb to the horrific happenings all over the world. After being hit with the onslaught of bad news for so long, the atrocities no longer shock you. You become sad and grieve for what the world could be.</p>
+</div> 
+
+<button class="scroll-button" onclick="smoothScroll()">&#8595;</button>
+
+  <script>
+    let scrollToBottom = true;
+
+    function smoothScroll() {
+      const topSection = document.getElementById("top-section");
+      const bottomSection = document.getElementById("bottom-section");
+
+      if (scrollToBottom) {
+        bottomSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        topSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      scrollToBottom = !scrollToBottom; // Toggle scroll direction
+    }
+  </script>
+
+</body>
+</html>
