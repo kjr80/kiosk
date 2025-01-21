@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">  
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>  
+</head>
+
+<body class="page5">
+    <ul>
+        <li><a href="wordchoice.html">Back</a></li>
+    <li style="float:left"><a>Occhialism</a></li>
+  </ul>
+
+  <div class="section top" id="top-section">
+    <br>
+    <br>
+  <h1 id="demo"></h1>
+
+  <script>
+  var i = 0;
+  var txt = 'Occhialism';
+  var speed = 200;
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  if (localStorage.getItem('startTypewriter') === 'true') {
+    localStorage.removeItem('startTypewriter');
+    typeWriter();
+  }
+
+  </script>
+  <p>the awareness of the smallness of your perspective<!-- , by which you couldn’t possibly draw any meaningful conclusions at all, about the world or the past or complexities of culture… --></p>
+
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+      <img src="big1.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="big2.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="big3.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+</div>
+  
+<script>
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+  }
+  
+  </script>
+
+<div class="section bottom" id="bottom-section">
+  <br>
+  <p class="p1">You are sitting outside at an evening bonfire. You look up into the night sky and notice the bright full moon and thousands upon thousands of stars glittering in the inky black sky. As you take in the celestial bodies above, your mind starts to wander. You recognize that you are in fact only an infinitesimally small, insignificant piece of the universe. Beyond Earth, there are limitless stars, solar systems and galaxies. An infinite universe that we cannot even begin to comprehend. What else - or who else - might exist there, beyond the realm of what we know? What does your life mean in the context of this vastness? Your life - while significant to you - is but one of billions of other lives just on this planet alone. You realize that there is so much else out there. So much knowledge, so many other ways of living, thinking and behaving. It is impossible to understand all that is.</p>
+</div>    
+
+<button class="scroll-button" onclick="smoothScroll()">&#8595;</button>
+
+  <script>
+    let scrollToBottom = true;
+
+    function smoothScroll() {
+      const topSection = document.getElementById("top-section");
+      const bottomSection = document.getElementById("bottom-section");
+
+      if (scrollToBottom) {
+        bottomSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        topSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      scrollToBottom = !scrollToBottom; // Toggle scroll direction
+    }
+  </script>
+
+</body>
+</html>

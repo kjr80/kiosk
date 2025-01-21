@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">  
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>  
+</head>
+
+<body class="page7">
+    <ul>
+        <li><a href="wordchoice.html">Back</a></li>
+    <li style="float:left"><a>Ruinenlust</a></li>
+  </ul>
+
+  <div class="section top" id="top-section">
+    <br>
+    <br>
+  <h1 id="demo"></h1>
+
+  <script>
+  var i = 0;
+  var txt = 'Ruinenlust';
+  var speed = 200;
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  if (localStorage.getItem('startTypewriter') === 'true') {
+    localStorage.removeItem('startTypewriter');
+    typeWriter();
+  }
+
+  </script>
+  <p>the feeling of pressure taken from spending time amidst ruins <!-- (emotional reaction against modernism and rebellious declaration of value in the past) --></p>
+
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+      <img src="ruins1.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="ruins2.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="ruins3.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+</div>
+
+  
+<script>
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+  }
+  
+  </script>
+
+<div class="section bottom" id="bottom-section">
+  <p class="p1">You are enjoying the trip of a lifetime: a Mediterranean cruise with stops in Italy and Greece. In both locations, you feel called to explore the ancient ruins of civilizations past. You walk among worn marble pillars of the parthenon and marvel at the fact that it is still standing. You then glance across the street and feel a brief let down as your gaze falls upon a brand new structure, devoid of any unique history. You feel a sense of nostalgia, and a longing for the amazing architecture of the past.</p>
+</div> 
+
+<button class="scroll-button" onclick="smoothScroll()">&#8595;</button>
+
+  <script>
+    let scrollToBottom = true;
+
+    function smoothScroll() {
+      const topSection = document.getElementById("top-section");
+      const bottomSection = document.getElementById("bottom-section");
+
+      if (scrollToBottom) {
+        bottomSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        topSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      scrollToBottom = !scrollToBottom; // Toggle scroll direction
+    }
+  </script>
+
+</body>
+</html>

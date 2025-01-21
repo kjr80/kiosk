@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<!--Refreshes index.html after 180 seconds-->
+  <meta http-equiv="refresh" content="180;url=index.html">  
+<!--Creates 3s fade-in animation-->
+  <style>
+    body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>  
+</head>
+
+
+<body class="page2">
+  <br>
+    <ul>
+        <li><a href="wordchoice.html">Back</a></li>
+    <li style="float:left"><a>Chrysalism</a></li>
+  </ul>
+
+ <div class="section top" id="top-section">
+
+ <br>
+  <h1 id="demo"></h1>
+
+  <script>
+  var i = 0;
+  var txt = 'Chrysalism';
+  var speed = 200;
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  if (localStorage.getItem('startTypewriter') === 'true') {
+    localStorage.removeItem('startTypewriter');
+    typeWriter();
+  }
+
+  </script>
+
+ <p>the amniotic tranquility of being indoors during a thunderstorm</p>
+
+ <script>
+  // Get the audio element by its ID
+  const audio = document.getElementById('myAudio');
+
+  // Set the volume level (between 0.0 and 1.0)
+  audio.volume = 0.8; // Sets the volume to 50%
+</script>
+
+<audio autoplay>
+  <source src="audio/Epic-Spectrum-When-Tomorrow-Comes.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+  <!-- <audio autoplay controls>
+  <source src="https://drive.google.com/uc?id=1wCXFLeJ-fNt321SO-JHTUTB9w9VHQagG&export=download" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>-->
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+      <img src="rain1.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="rain2.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <div class="mySlides fade">
+      <img src="rain3.jpg" style="width:100%">
+    <!--<div class="text">Caption Text</div>-->
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  </div>
+
+
+    <script>
+
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+      }
+      
+      </script>
+
+
+<div class="section bottom" id="bottom-section">
+  <br>
+<p class="p1">It has been a long, exhausting day. As bedtime approaches, you slip into your most comfortable pajamas and get underneath the soft, fluffy, warm covers of your bed. You draw the curtains and light a candle, reveling in the peace and tranquility of your bedroom. As your mind and body begin to relax, you begin to hear raindrops dancing off the rooftop over your head. Slow rolls of thunder soon follow, and every now and then you can hear an occasional crack of lightning. The cadence of the raindrops slowly start to lull you to sleep. You drift off in a dreamlike state, cocooned in your bed and serenaded by the symphony of the storm outside.</p>
+</div>
+
+<button class="scroll-button" onclick="smoothScroll()">&#8595;</button>
+
+  <script>
+    let scrollToBottom = true;
+
+    function smoothScroll() {
+      const topSection = document.getElementById("top-section");
+      const bottomSection = document.getElementById("bottom-section");
+
+      if (scrollToBottom) {
+        bottomSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        topSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      scrollToBottom = !scrollToBottom; // Toggle scroll direction
+    }
+  </script>
+
+</body>
+</html>
+
+// Music track: When Tomorrow Comes by Epic Spectrum
+Source: https://freetouse.com/music
+Free No Copyright Music Download
